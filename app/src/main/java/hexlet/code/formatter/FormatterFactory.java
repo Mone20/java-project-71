@@ -9,16 +9,12 @@ import lombok.RequiredArgsConstructor;
 public class FormatterFactory {
 
     public static Formatter generateFormatter(FormatterType format) {
-        switch (format) {
-            case STYLISH:
-                return new StylishFormatter();
-            case PLAIN:
-                return new PlainFormatter();
-            case JSON:
-                return new JsonFormatter();
-            default:
-                throw new UnknownFileExtensionException(format.toString());
-        }
+        return switch (format) {
+            case STYLISH -> new StylishFormatter();
+            case PLAIN -> new PlainFormatter();
+            case JSON -> new JsonFormatter();
+            default -> throw new UnknownFileExtensionException(format.toString());
+        };
     }
 
     @RequiredArgsConstructor

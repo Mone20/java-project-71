@@ -30,9 +30,8 @@ public final class App implements Callable<Integer> {
 
     @Override
     public Integer call() {
-        Differ differ = new Differ();
         try {
-            String formattedDiff = differ.generate(filePath1, filePath2, formatName);
+            String formattedDiff = Differ.generate(filePath1, filePath2, formatName);
             System.out.println(formattedDiff);
         } catch (Exception e) {
             System.out.println(e.getMessage());
