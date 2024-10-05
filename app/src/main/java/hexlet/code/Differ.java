@@ -61,6 +61,7 @@ public class Differ {
         keys.addAll(rightContent.keySet());
 
         return keys.stream()
+                .sorted()
                 .map(key -> {
                     ParsedNode parsedNode = new ParsedNode();
                     parsedNode.setId(key);
