@@ -34,6 +34,10 @@ public class Differ {
         return Parser.parse(content, dataFormat);
     }
 
+    public static String generate(String filePath1, String filePath2) throws Exception {
+        return generate(filePath1, filePath2, null);
+    }
+
 
     public static String generate(String filePath1, String filePath2, String formatName) throws Exception {
         Map<String, ?> data1 = getData(filePath1);
