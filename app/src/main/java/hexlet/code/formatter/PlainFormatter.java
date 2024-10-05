@@ -16,7 +16,7 @@ public class PlainFormatter implements Formatter {
         if (value instanceof Map || value instanceof Iterable) {
             return "[complex value]";
         }
-        return value.toString();
+        return value == null ? "null" : value.toString();
     }
 
 
