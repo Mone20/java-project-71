@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 
 public class FormatterFactory {
 
-    public Formatter generateFormatter(FormatterType format) {
+    public static Formatter generateFormatter(FormatterType format) {
         switch (format) {
             case STYLISH:
                 return new StylishFormatter();

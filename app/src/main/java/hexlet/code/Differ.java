@@ -14,18 +14,14 @@ import java.util.HashSet;
 import java.util.stream.Collectors;
 
 public class Differ {
-
-    private final Parser parser = new Parser();
-    private final FormatterFactory formatterFactory = new FormatterFactory();
-
-    private String getFileExtension(String filePath) {
+    private static String getFileExtension(String filePath) {
         int index = filePath.lastIndexOf('.');
         return index > 0
                 ? filePath.substring(index + 1)
                 : "";
     }
 
-    private Map<String, ?> getData(String filePath) throws Exception {
+    private static Map<String, ?> getData(String filePath) throws Exception {
         Path fullPath = Paths.get(filePath).toAbsolutePath().normalize();
 
         if (!Files.exists(fullPath)) {
@@ -35,17 +31,17 @@ public class Differ {
         String content = new String(Files.readAllBytes(fullPath));
         String dataFormat = getFileExtension(filePath);
 
-        return parser.parse(content, dataFormat);
+        return Parser.parse(content, dataFormat);
     }
 
 
-    public String generate(String filePath1, String filePath2, String formatName) throws Exception {
+    public static String generate(String filePath1, String filePath2, String formatName) throws Exception {
         Map<String, ?> data1 = getData(filePath1);
         Map<String, ?> data2 = getData(filePath2);
 
         List<ParsedNode> diff = findDifferences(data1, data2);
 
-        Formatter formatter = formatterFactory.generateFormatter(
+        Formatter formatter = FormatterFactory.generateFormatter(
                 formatName == null
                 ? FormatterFactory.FormatterType.STYLISH
                 : FormatterFactory.FormatterType.fromString(formatName)
@@ -55,7 +51,7 @@ public class Differ {
     }
 
 
-    public List<ParsedNode> findDifferences(Map<String, ?> leftContent, Map<String, ?> rightContent) {
+    public static List<ParsedNode> findDifferences(Map<String, ?> leftContent, Map<String, ?> rightContent) {
         Set<String> keys = new HashSet<>();
         keys.addAll(leftContent.keySet());
         keys.addAll(rightContent.keySet());
