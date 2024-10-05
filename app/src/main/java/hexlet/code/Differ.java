@@ -77,14 +77,12 @@ public class Differ {
                     Object rightValue = rightContent.get(key);
                     parsedNode.setId(key);
                     parsedNode.setOriginalValue(leftValue);
-                    if (!leftContent.containsKey(key)) {
-                        parsedNode.setState(ParsedNode.ParsedState.ADDED);
-                        parsedNode.setChangedValue(rightValue);
-                    }
                     if (!rightContent.containsKey(key)) {
                         parsedNode.setState(ParsedNode.ParsedState.DELETED);
-                    }
-                    if (!isEqual(leftValue, rightValue)) {
+                    } else if (!leftContent.containsKey(key)) {
+                        parsedNode.setState(ParsedNode.ParsedState.ADDED);
+                        parsedNode.setChangedValue(rightValue);
+                    } else if (!isEqual(leftValue, rightValue)) {
                         parsedNode.setState(ParsedNode.ParsedState.MODIFIED);
                         parsedNode.setChangedValue(rightValue);
                     } else {
