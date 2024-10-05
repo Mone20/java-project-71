@@ -34,10 +34,12 @@ public class PlainFormatter implements Formatter {
                                     .append("' was added")
                                     .append(" with value: ")
                                     .append(format(node.getChangedValue()));
+                            break;
                         case DELETED:
                             stringBuilder.append("Property '")
                                     .append(key)
                                     .append("' was removed");
+                            break;
                         case MODIFIED:
                             stringBuilder.append("Property '")
                                     .append(key)
@@ -45,7 +47,9 @@ public class PlainFormatter implements Formatter {
                                     .append(" From ")
                                     .append(format(node.getOriginalValue()))
                                     .append(" to ").append(format(node.getChangedValue()));
+                            break;
                         case NOT_MODIFIED:
+                            return "";
                         default:
                             break;
                     }
