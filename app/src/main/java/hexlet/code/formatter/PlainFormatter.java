@@ -21,7 +21,11 @@ public class PlainFormatter implements Formatter {
     }
 
 
-
+    /** Method for render parsed nodes in plain text.
+     * @param parsedNodes list with parsed nodes with configured result of comparing.
+     * @return rendered string.
+     */
+    @Override
     public String render(List<ParsedNode> parsedNodes) {
         return parsedNodes.stream()
                 .map(node -> {

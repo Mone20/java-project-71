@@ -8,6 +8,12 @@ public class StylishFormatter implements Formatter {
 
     private static final String INDENT = "  ";
 
+    /**
+     * Method for render parsed nodes in stylish format.
+     *
+     * @param parsedNodes list with parsed nodes with configured result of comparing.
+     * @return rendered string.
+     */
     @Override
     public String render(List<ParsedNode> parsedNodes) {
         StringBuilder result = new StringBuilder("{\n");
@@ -36,6 +42,8 @@ public class StylishFormatter implements Formatter {
                 case NOT_MODIFIED:
                     result.append(INDENT).append("  ").append(node.getId())
                             .append(": ").append(formatValue(node.getOriginalValue())).append("\n");
+                    break;
+                default:
                     break;
             }
         }

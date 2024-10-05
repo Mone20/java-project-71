@@ -1,6 +1,10 @@
 package hexlet.code.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import lombok.Getter;
 
 @AllArgsConstructor
 @NoArgsConstructor

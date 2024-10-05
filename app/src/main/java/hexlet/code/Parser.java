@@ -10,12 +10,12 @@ public class Parser {
 
     private static Map<String, ?> parseYaml(String content) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        return (Map<String, ?>)mapper.readValue(content, Map.class);
+        return (Map<String, ?>) mapper.readValue(content, Map.class);
     }
 
     private static Map<String, ?> parseJson(String content) throws JsonProcessingException  {
         ObjectMapper mapper = new ObjectMapper();
-        return (Map<String, ?>)mapper.readValue(content, Map.class);
+        return (Map<String, ?>) mapper.readValue(content, Map.class);
     }
 
     public static Map<String, ?> parse(String content, String dataFormat) throws JsonProcessingException {
