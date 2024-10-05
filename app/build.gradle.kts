@@ -22,10 +22,10 @@ dependencies {
     implementation("com.google.guava:guava:33.1.0-jre")
     testImplementation("org.skyscreamer:jsonassert:1.5.1")
     implementation("info.picocli:picocli:4.7.5")
-    implementation("org.projectlombok:lombok:1.18.28")
-    annotationProcessor("org.projectlombok:lombok:1.18.28")
-    testImplementation("org.projectlombok:lombok:1.18.28")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.28")
+    implementation("org.projectlombok:lombok:1.18.30")
+    annotationProcessor("org.projectlombok:lombok:1.18.30")
+    testImplementation("org.projectlombok:lombok:1.18.30")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.30")
 
 }
 

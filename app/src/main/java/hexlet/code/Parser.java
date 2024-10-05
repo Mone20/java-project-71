@@ -19,15 +19,11 @@ public class Parser {
     }
 
     public Map<String, ?> parse(String content, String dataFormat) throws JsonProcessingException {
-        switch (dataFormat) {
-            case "json":
-                return parseJson(content);
-            case "yaml":
-            case "yml":
-                return parseYaml(content);
-            default:
-                throw new UnknownFileExtensionException(dataFormat);
-        }
+        return switch (dataFormat) {
+            case "json" -> parseJson(content);
+            case "yaml", "yml" -> parseYaml(content);
+            default -> throw new UnknownFileExtensionException(dataFormat);
+        };
     }
 }
 
