@@ -54,6 +54,15 @@ public class Differ {
         return formatter.render(diff);
     }
 
+    private static Boolean isEqual(Object value1, Object value2) {
+        if (value1 == null || value2 == null) {
+            return value1 == value2;
+        }
+
+        return value1.equals(value2);
+    }
+
+
 
     public static List<ParsedNode> findDifferences(Map<String, ?> leftContent, Map<String, ?> rightContent) {
         Set<String> keys = new HashSet<>();
@@ -64,19 +73,18 @@ public class Differ {
                 .sorted()
                 .map(key -> {
                     ParsedNode parsedNode = new ParsedNode();
-                    parsedNode.setId(key);
                     Object leftValue = leftContent.get(key);
                     Object rightValue = rightContent.get(key);
-
+                    parsedNode.setId(key);
                     parsedNode.setOriginalValue(leftValue);
                     if (!leftContent.containsKey(key)) {
                         parsedNode.setState(ParsedNode.ParsedState.ADDED);
-                        parsedNode.setChangedValue(rightContent.get(key));
+                        parsedNode.setChangedValue(rightValue);
                     }
                     if (!rightContent.containsKey(key)) {
                         parsedNode.setState(ParsedNode.ParsedState.DELETED);
                     }
-                    if (rightValue != null && rightValue.equals(leftValue)) {
+                    if (!isEqual(leftValue, rightValue)) {
                         parsedNode.setState(ParsedNode.ParsedState.MODIFIED);
                         parsedNode.setChangedValue(rightValue);
                     } else {
