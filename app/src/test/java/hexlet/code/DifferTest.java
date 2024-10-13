@@ -1,6 +1,5 @@
-package java.hexlet.code;
+package hexlet.code;
 
-import hexlet.code.Differ;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -20,7 +19,7 @@ public class DifferTest {
         String filePath1 = "src/test/resources/fixtures/file1.json";
         String filePath2 = "src/test/resources/fixtures/file2.json";
 
-        String expected = getFixtureContent("expected_stylish.txt");
+        String expected = getFixtureContent("result_stylish.txt");
         String result = Differ.generate(filePath1, filePath2, "stylish");
 
         assertEquals(expected, result);
@@ -28,10 +27,10 @@ public class DifferTest {
 
     @Test
     public void testGeneratePlainFormat() throws Exception {
-        String filePath1 = "src/test/resources/fixtures/file1.yaml";
-        String filePath2 = "src/test/resources/fixtures/file2.yaml";
+        String filePath1 = "src/test/resources/fixtures/file1.yml";
+        String filePath2 = "src/test/resources/fixtures/file2.yml";
 
-        String expected = getFixtureContent("expected_plain.txt");
+        String expected = getFixtureContent("result_plain.txt");
         String result = Differ.generate(filePath1, filePath2, "plain");
 
         assertEquals(expected, result);
@@ -40,9 +39,9 @@ public class DifferTest {
     @Test
     public void testGenerateJsonFormat() throws Exception {
         String filePath1 = "src/test/resources/fixtures/file1.json";
-        String filePath2 = "src/test/resources/fixtures/file2.yaml";
+        String filePath2 = "src/test/resources/fixtures/file2.yml";
 
-        String expected = getFixtureContent("expected_json.txt");
+        String expected = getFixtureContent("result_json.json");
         String result = Differ.generate(filePath1, filePath2, "json");
 
         assertEquals(expected, result);
@@ -53,7 +52,7 @@ public class DifferTest {
         String filePath1 = "src/test/resources/fixtures/file1.json";
         String filePath2 = "src/test/resources/fixtures/file2.json";
 
-        String expected = getFixtureContent("expected_stylish.txt");
+        String expected = getFixtureContent("result_stylish.txt");
         String result = Differ.generate(filePath1, filePath2);
 
         assertEquals(expected, result);

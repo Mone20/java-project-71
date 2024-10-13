@@ -39,10 +39,7 @@ tasks.jacocoTestReport {
 tasks.jacocoTestReport {
     reports {
         xml.required.set(true)
-        html.required.set(true)
-        csv.required.set(false)
         xml.outputLocation.set(file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml"))
-        html.outputLocation.set(file("${buildDir}/reports/jacoco/test/html"))
     }
 }
 
