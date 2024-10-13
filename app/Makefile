@@ -1,5 +1,5 @@
 setup:
-	gradle wrapper --gradle-version 8.5
+	gradle wrapper --gradle-version 8.8
 
 clean:
 	./gradlew clean

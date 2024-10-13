@@ -5,6 +5,7 @@ plugins {
     id("com.github.ben-manes.versions") version "0.51.0"
 }
 
+
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
 
@@ -32,5 +33,16 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
-tasks.jacocoTestReport { reports { xml.required.set(true) } }
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+}
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+        csv.required.set(false)
+        xml.outputLocation.set(file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml"))
+        html.outputLocation.set(file("${buildDir}/reports/jacoco/test/html"))
+    }
+}
 

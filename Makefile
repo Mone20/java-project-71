@@ -12,9 +12,6 @@ build:
 install:
 	make -C app install
 
-run-dist:
-	make -C run-dist
-
 run:
 	make -C app run
 
