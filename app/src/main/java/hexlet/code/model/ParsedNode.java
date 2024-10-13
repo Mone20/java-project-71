@@ -11,7 +11,7 @@ import lombok.Getter;
 @Data
 public class ParsedNode {
 
-    private String id;
+    private String key;
     private Object originalValue;
     private Object changedValue;
     private ParsedState state;

@@ -26,21 +26,21 @@ public class StylishFormatter implements Formatter {
         for (ParsedNode node : nodes) {
             switch (node.getState()) {
                 case ADDED:
-                    result.append(INDENT).append("+ ").append(node.getId())
+                    result.append(INDENT).append("+ ").append(node.getKey())
                             .append(": ").append(formatValue(node.getChangedValue())).append("\n");
                     break;
                 case DELETED:
-                    result.append(INDENT).append("- ").append(node.getId())
+                    result.append(INDENT).append("- ").append(node.getKey())
                             .append(": ").append(formatValue(node.getOriginalValue())).append("\n");
                     break;
                 case MODIFIED:
-                    result.append(INDENT).append("- ").append(node.getId())
+                    result.append(INDENT).append("- ").append(node.getKey())
                             .append(": ").append(formatValue(node.getOriginalValue())).append("\n");
-                    result.append(INDENT).append("+ ").append(node.getId())
+                    result.append(INDENT).append("+ ").append(node.getKey())
                             .append(": ").append(formatValue(node.getChangedValue())).append("\n");
                     break;
                 case NOT_MODIFIED:
-                    result.append(INDENT).append("  ").append(node.getId())
+                    result.append(INDENT).append("  ").append(node.getKey())
                             .append(": ").append(formatValue(node.getOriginalValue())).append("\n");
                     break;
                 default:

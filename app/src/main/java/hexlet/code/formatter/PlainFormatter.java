@@ -30,7 +30,7 @@ public class PlainFormatter implements Formatter {
         return parsedNodes.stream()
                 .map(node -> {
                     StringBuilder stringBuilder = new StringBuilder();
-                    String key = node.getId();
+                    String key = node.getKey();
                     switch (node.getState()) {
                         case ADDED:
                             stringBuilder.append("Property '")
