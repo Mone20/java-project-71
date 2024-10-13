@@ -15,7 +15,7 @@ public class DifferTest {
     }
 
     @Test
-    public void test_JsonInput_GenerateStylishFormat() throws Exception {
+    public void testJsonInputGenerateStylishFormat() throws Exception {
         String filePath1 = "src/test/resources/fixtures/file1.json";
         String filePath2 = "src/test/resources/fixtures/file2.json";
 
@@ -26,7 +26,7 @@ public class DifferTest {
     }
 
     @Test
-    public void test_JsonInput_GeneratePlainFormat() throws Exception {
+    public void testJsonInputGeneratePlainFormat() throws Exception {
         String filePath1 = "src/test/resources/fixtures/file1.json";
         String filePath2 = "src/test/resources/fixtures/file2.json";
 
@@ -37,7 +37,7 @@ public class DifferTest {
     }
 
     @Test
-    public void test_JsonInput_GenerateJsonFormat() throws Exception {
+    public void testJsonInputGenerateJsonFormat() throws Exception {
         String filePath1 = "src/test/resources/fixtures/file1.json";
         String filePath2 = "src/test/resources/fixtures/file2.json";
 
@@ -48,7 +48,7 @@ public class DifferTest {
     }
 
     @Test
-    public void test_JsonInput_DefaultFormat() throws Exception {
+    public void testJsonInputDefaultFormat() throws Exception {
         String filePath1 = "src/test/resources/fixtures/file1.json";
         String filePath2 = "src/test/resources/fixtures/file2.json";
 
@@ -59,7 +59,7 @@ public class DifferTest {
     }
 
     @Test
-    public void test_YamlInput_GenerateStylishFormat() throws Exception {
+    public void testYamlInputGenerateStylishFormat() throws Exception {
         String filePath1 = "src/test/resources/fixtures/file1.yml";
         String filePath2 = "src/test/resources/fixtures/file2.yml";
 
@@ -70,7 +70,7 @@ public class DifferTest {
     }
 
     @Test
-    public void test_YamlInput_GeneratePlainFormat() throws Exception {
+    public void testYamlInputGeneratePlainFormat() throws Exception {
         String filePath1 = "src/test/resources/fixtures/file1.yml";
         String filePath2 = "src/test/resources/fixtures/file2.yml";
 
@@ -81,7 +81,7 @@ public class DifferTest {
     }
 
     @Test
-    public void test_YamlInput_GenerateJsonFormat() throws Exception {
+    public void testYamlInputGenerateJsonFormat() throws Exception {
         String filePath1 = "src/test/resources/fixtures/file1.yml";
         String filePath2 = "src/test/resources/fixtures/file2.yml";
 
@@ -92,7 +92,7 @@ public class DifferTest {
     }
 
     @Test
-    public void test_YamlInput_DefaultFormat() throws Exception {
+    public void testYamlInputDefaultFormat() throws Exception {
         String filePath1 = "src/test/resources/fixtures/file1.yml";
         String filePath2 = "src/test/resources/fixtures/file2.yml";
 
